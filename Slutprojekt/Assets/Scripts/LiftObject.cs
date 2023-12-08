@@ -13,6 +13,8 @@ public class LiftObject : MonoBehaviour
     private bool isCarried = false;
 
 
+
+
     private void OnTriggerEnter (Collider other)
     {
         if (other.gameObject.tag == "Player") 
@@ -47,7 +49,8 @@ public class LiftObject : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Q) && canCarry)
-        { 
+        {   
+            GetComponent<AudioSource>().Play();
 
             if (!isCarried) 
             { 
@@ -57,7 +60,6 @@ public class LiftObject : MonoBehaviour
                 transform.parent = gripPoint;
                 GetComponent<Rigidbody>().isKinematic = true;
                 GetComponent <Collider>().isTrigger = true;
-                Debug.Log("carried");
 
             }
 

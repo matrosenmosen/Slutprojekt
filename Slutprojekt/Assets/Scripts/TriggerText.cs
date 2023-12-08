@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class TriggerText : MonoBehaviour
 {
-
+    
+    // script som kan setactive gameobjects genom trigger
+    
     public GameObject triggerText;
     public GameObject panel;
 
+    private bool canread = false;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                panel.SetActive(true);
-                Time.timeScale = 0f;
-
-            }
-
-        }
+            canread = true;
+            
+}
     }
 
     private void OnTriggerStay(Collider other)
@@ -29,12 +27,7 @@ public class TriggerText : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                panel.SetActive(true);
-                Time.timeScale = 0f;
-
-            }
+            canread = true;
         }
     }
 
@@ -43,6 +36,18 @@ public class TriggerText : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(false);
+            canread = false;
         }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && canread)
+        {
+            panel.SetActive(true);
+            Time.timeScale = 0f;
+
+        }
+
     }
 }
