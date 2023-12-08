@@ -355,6 +355,7 @@
 "Assets/Downloaded assets/LowPolyLight/Effect/Bloom.cs"
 "Assets/Scripts/checkAnswer.cs"
 "Assets/Scripts/CheckPassword.cs"
+"Assets/Scripts/ClosePanel.cs"
 "Assets/Scripts/Dialogue.cs"
 "Assets/Scripts/DialogueController.cs"
 "Assets/Scripts/DialogueTrigger.cs"

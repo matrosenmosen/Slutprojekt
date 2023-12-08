@@ -14,7 +14,13 @@ public class TriggerText : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(true);
-            
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                panel.SetActive(true);
+                Time.timeScale = 0f;
+
+            }
+
         }
     }
 
@@ -23,6 +29,12 @@ public class TriggerText : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                panel.SetActive(true);
+                Time.timeScale = 0f;
+
+            }
         }
     }
 
@@ -31,16 +43,6 @@ public class TriggerText : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             triggerText.SetActive(false);
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            panel.SetActive(true);
-            Time.timeScale = 0f;
-
         }
     }
 }
